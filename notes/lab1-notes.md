@@ -52,7 +52,13 @@ with the reference being created from new and then dup is able to replicate this
 | size_t SoftMaxHeapSize | 8355053568 | {manageable} {ergonomic} |
 | bool UseG1GC           | true       | {prodcut} {ergonomic}    |
 
+## Security and Production Review Answers
 
-
+1. Because bytecode itself is not human readable, there may be certain vulnerabilities or errors that could appear that would be more easily caught in human-readable form.
+2. If a customer's private information sits in memory, that information could then become accessible to outside users who are able to backdoor their way into reading the program's memory, causing a data leak.
+3. Passwords and Access keys are meant to be kept private, and printing that information creates a reference to that data that can then be accessed creating a security risk.
+4. Without proper bytecode verifications, an external .class retainer could be called to, where if it's from an outside source it could call to code not written by the developer, which could cause a massive security risk.
+5. This can quickly cause `OOM` errors when you need code that requires scalability, so it's important to understand what sort of memory is being used and where it is being allocated to.
+6. Garbage Collection from login attempts, Access key timeouts, and Admin vs. Regular User privileges.
 
 
