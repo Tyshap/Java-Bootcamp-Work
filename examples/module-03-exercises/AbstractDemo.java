@@ -4,4 +4,4 @@ public class AbstractDemo {
         AbstractAccount account = new AbstractSavings(50.00);
         System.out.println(account.getAccountType() + " balance: " + account.getBalance());
     }
-}
+}   
