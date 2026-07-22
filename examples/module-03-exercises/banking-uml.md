@@ -46,3 +46,5 @@ classDiagram
 
 - Inheritance: Savings and Current Accounts inherit from the Account Class
 - Interface: Customer should have access to printDetails functionality.
+- One Customer can hold many ccounts
+- One account can house many transactions
