@@ -1,0 +1,10 @@
+# Collection choices
+
+| # | Scenario | Need (order / unique / key→value / sorted) | Interface | Implementation  | Why                                                                                                                      |
+| - | -------- |--------------------------------------------|-----------|-----------------|--------------------------------------------------------------------------------------------------------------------------|
+| 1 | Ordered catalog; duplicate titles allowed | Order                                      | `List`    | `ArrayList`     | The Order here doesn't particularly matter, and duplicates are allowed, so an ArrayList makes sense.                     |
+| 2 | Unique registered book IDs | Unique                                     | `Set`     | `TreeSet`       | Needing entries to be unique means I should use a Set, and with no keys to match to a TreeSet makes the most sense here. |
+| 3 | Book ID → current borrower ID | Unique Key                                 | `Set`     | `HashMap`       | Here each unique entry should have a key, meaning a hash map makes the most sense.                                       |
+| 4 | Alphabetically sorted categories | Sorted, Order                              | `List`    | `ArrayList`     | Only need to sort a list of entries, ArrayList is enough fo rthis                                                        |
+| 5 | Category → count, sorted by category | Key, sorted                                | `Set`     | `TreeSet`       | Tree sets are perfect for when you have a values that act as the key to another value that you need sorted.              |
+| 6 | Checkout history in event order | Order, sorted                              | `Queue`   | `PriorityQueue` | Using a Queue makes sense when the order matters.                                                                        |
