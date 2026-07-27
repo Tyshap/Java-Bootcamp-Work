@@ -1,0 +1,20 @@
+2026-07-27 11:26:08 INFO Login successful for account 1001
+2026-07-27 11:26:22 ERROR Requested 20000.0 Balance 11000.0
+InsufficientFundsException Transaction Failed. Insufficient Account Balance.
+[com.academy.atm.Account.withdraw(Account.java:40), com.academy.atm.ATMService.lambda$withdraw$1(ATMService.java:99), com.academy.atm.ATMService.executeTransaction(ATMService.java:247), com.academy.atm.ATMService.withdraw(ATMService.java:96), com.academy.atm.Main.main(Main.java:34)]
+2026-07-27 11:26:31 ERROR Amount must be greater than zero.
+InvalidAmountException Amount must be greater than zero.
+[com.academy.atm.Account.deposit(Account.java:30), com.academy.atm.ATMService.lambda$deposit$0(ATMService.java:88), com.academy.atm.ATMService.executeTransaction(ATMService.java:247), com.academy.atm.ATMService.deposit(ATMService.java:85), com.academy.atm.Main.main(Main.java:33)]
+2026-07-27 11:27:02 INFO Deposit completed successfully | Execution Time: 1218 ms
+2026-07-27 11:27:13 ERROR Invalid menu option: abc
+NumberFormatException For input string: "abc"
+[java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67), java.base/java.lang.Integer.parseInt(Integer.java:662), java.base/java.lang.Integer.parseInt(Integer.java:778), com.academy.atm.Main.main(Main.java:22)]
+2026-07-27 11:27:21 ERROR Invalid numeric input during Withdraw
+InputMismatchException Invalid numeric input.
+[com.academy.atm.ATMService.readAmount(ATMService.java:224), com.academy.atm.ATMService.lambda$withdraw$1(ATMService.java:98), com.academy.atm.ATMService.executeTransaction(ATMService.java:247), com.academy.atm.ATMService.withdraw(ATMService.java:96), com.academy.atm.Main.main(Main.java:34)]
+2026-07-27 11:27:29 INFO Mini Statement completed successfully | Execution Time: 2 ms
+2026-07-27 11:27:53 ERROR Account not found: 3333
+AccountNotFoundException Account not found: 3333
+[com.academy.atm.ATMService.findAccount(ATMService.java:38), com.academy.atm.ATMService.lambda$transferFunds$3(ATMService.java:118), com.academy.atm.ATMService.executeTransaction(ATMService.java:247), com.academy.atm.ATMService.transferFunds(ATMService.java:114), com.academy.atm.Main.main(Main.java:36)]
+2026-07-27 11:28:04 INFO Withdraw completed successfully | Execution Time: 1960 ms
+2026-07-27 11:28:08 INFO Balance Inquiry completed successfully | Execution Time: 0 ms
