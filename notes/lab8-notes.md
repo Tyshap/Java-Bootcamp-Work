@@ -9,7 +9,10 @@ Fail Path: Main -> CustomerController -> CustomerService -> CustomerNotFoundExce
 4. The Customer ID `CUS-1001` should be a safe way of searching for a customer since there should only be one unique customer ID per customer, while the name of a customer can match the name of another.
 5. Writing Data multiple times can ensure data consistency, and using multiple checks is a good way of counteracting network timeouts or ambiguous states
 6. In local development, access to data is as simple as checking a file while when working with repositories you are making external calls to databases, meaning that you can be unsure of the streams that you recieve when making those calls, meaning you need to account for what data you might be pulling.
-7. 
+7. Logs will be necessary for any thrown exceptions as well as for data transfers so that if failure is to occur it can be clear where the failure is occurring.
+8. We need to avoid two threads attempting to overwrite the same customer ID's data as that could lead to corruption of data, so creating thread safe code using these layers for proper API calls
+9. If entity were to import the controller, that could cause a loop of calls which would create logs and stack traces that are very difficult to follow.
+10. `dto` should carry any necessary data between the `entity` and whatever API calls you are making. Using dtos is safer than having an entity directly interact through an API call.
 
 
 ## Layer Hierarchy
