@@ -2,6 +2,8 @@ package com.northstar.crm.service;
 
 import com.northstar.crm.entity.Customer;
 import com.northstar.crm.entity.CustomerStatus;
+import com.northstar.crm.dto.CustomerResponse;
+import com.northstar.crm.dto.CustomerRequest;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -59,4 +61,18 @@ public class CustomerService {
     public List<Customer> listAll() {
         return Collections.unmodifiableList(new ArrayList<>(customers));
     }
+
+
+    public CustomerResponse create(CustomerRequest request) {
+        throw new UnsupportedOperationException("Lab 8 stub — implement later");
+    }
+
+    public CustomerResponse getById(String customerId) {
+        throw new UnsupportedOperationException("Lab 8 stub — implement later");
+    }
 }
+
+
+
+
+
