@@ -1,0 +1,6 @@
+## Allowed Transitions
+
+PROSPECT  -> ACTIVE, CLOSED
+ACTIVE    -> SUSPENDED, CLOSED
+SUSPENDED -> ACTIVE, CLOSED
+CLOSED    -> (none)
