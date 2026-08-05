@@ -1,0 +1,46 @@
+<form id="customer-form">
+    <label>Customer ID <input id="customerId" data-testid="customer-id"/></label>
+    <label>Full name <input id="fullName" data-testid="full-name"/></label>
+    <label>Status <select id="status" data-testid="status">
+        <option>ACTIVE</option><option>PROSPECT</option>
+    </select></label>
+    <button type="submit" data-testid="submit">Save</button>
+</form>
+<div id="result" data-testid="result"></div>
+
+<script>
+  const form = document.getElementById('customer-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const customerId = document.getElementById('customerId').value;
+    const fullName = document.getElementById('fullName').value;
+    const status = document.getElementById('status').value;
+    const resultDiv = document.getElementById('result');
+    
+    try {
+      const response = await fetch('/api/customers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Correlation-Id': 'lab-request-001'
+        },
+        body: JSON.stringify({
+          customerId,
+          fullName,
+          status
+        })
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        resultDiv.textContent = `Saved: ID: ${data.customerId}, Name: ${data.fullName}, Status: ${data.status}`;
+      } else {
+        const error = await response.text();
+        resultDiv.textContent = error;
+      }
+    } catch (err) {
+      resultDiv.textContent = `Error: ${err.message}`;
+    }
+  });
+</script>
