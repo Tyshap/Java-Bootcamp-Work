@@ -1,0 +1,31 @@
+# Northstar CRM Coding Standards (Lab 8)
+
+## Layers
+- controller: transport / API mapping only
+- service: business rules
+- repository: persistence
+- entity: domain model
+- dto: request/response contracts
+- config: wiring
+- exception: domain and API failures
+
+## Hard rules
+- Services must not depend on controllers.
+- Entities must not carry HTTP or SOAP types.
+- Repositories must not import controllers.
+- No production passwords or API keys in source.
+- Prefer CUS-#### for stable customer identities in examples.
+
+## CI note (preview — pipelines deepen in later modules)
+
+Preferred verify command on agents:
+
+    mvn -B verify
+
+`-B` is batch mode (non-interactive). Prefer `verify` over `install` on CI
+unless your pipeline intentionally publishes to an artifact repository.
+Never deploy snapshots from a developer laptop without agreement.
+
+Artifact coordinates: com.northstar:customer-service:0.1.0-SNAPSHOT
+Sample customer IDs (docs only): CUS-1001, CUS-1002
+Correlation ID (logs later): lab-request-001
