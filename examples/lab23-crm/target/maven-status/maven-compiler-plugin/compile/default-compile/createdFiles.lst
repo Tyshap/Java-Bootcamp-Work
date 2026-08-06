@@ -1,0 +1,4 @@
+com\northstar\crm\api\CustomerController.class
+com\northstar\crm\CrmApplication.class
+com\northstar\crm\model\Customer.class
+com\northstar\crm\service\CustomerService.class
