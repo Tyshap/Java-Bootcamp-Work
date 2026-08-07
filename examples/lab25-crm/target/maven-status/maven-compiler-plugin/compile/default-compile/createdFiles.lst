@@ -1,0 +1,9 @@
+com\northstar\crm\api\CustomerController.class
+com\northstar\crm\endpoint\CustomerSoapMapper.class
+com\northstar\crm\repository\InMemoryCustomerRepository.class
+com\northstar\crm\model\Customer.class
+com\northstar\crm\config\WebServiceConfig.class
+com\northstar\crm\service\CustomerService.class
+com\northstar\crm\endpoint\CustomerEndpoint.class
+com\northstar\crm\CrmApplication.class
+com\northstar\crm\repository\CustomerRepository.class
